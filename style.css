@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle, #000, #111);
+  overflow: hidden;
+  font-family: Arial;
+  color: white;
+  font-family: Arial;
+
+  background: url("background.gif") no-repeat center center fixed;
+  background-size: cover;
+}
+/* screens */
+.screen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.active { display: flex; }
+
+/* glow text */
+.glow {
+  color: gold;
+  text-shadow: 0 0 20px gold;
+}
+
+/* button */
+button {
+  padding: 12px 25px;
+  background: gold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* photo */
+.photo {
+  width: 238px;
+  border-radius: 50%;
+  border: 4px solid gold;
+  box-shadow: 0 0 20px gold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* cake */
+.cake {
+  width: 260px;
+  margin: 20px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: 1s;
+}
+.showCake {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* text typing */
+#text {
+  font-size: 28px;
+  color: gold;
+  margin-top: 10px;
+}
+
+/* shayari */
+#shayari {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 2s;
+  color: white;
+}
+
+#shayari.show2 {
+  opacity: 1;
+  transform: scale(1);
+}
+/* balloons */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+}
+.balloon::after {
+  content: "";
+  width: 2px;
+  height: 30px;
+  background: white;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+}
+.balloon.red { background:red; left:10%; animation-duration:6s;}
+.balloon.blue { background:blue; left:30%; animation-duration:7s;}
+.balloon.green { background:green; left:50%; animation-duration:8s;}
+.balloon.yellow { background:yellow; left:70%; animation-duration:6.5s;}
+.balloon.pink { background:pink; left:85%; animation-duration:7.5s;}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120vh); }
+}
+
+/* confetti */
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  top: 0;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+/* FLOATING IMAGES */
+.floating {
+     position: absolute;
+    width: 171px;
+    border-radius: 10px;
+    opacity: 0.8;
+    animation: floatMove 6s ease-in-out infinite alternate;
+    height: 145px;
+}
+
+/* अलग-अलग positions */
+.f1 { top: 10%; left: 5%; animation-duration: 6s; }
+.f2 { top: 30%; right: 10%; animation-duration: 7s; }
+.f3 { bottom: 20%; left: 15%; animation-duration: 8s; }
+.f4 { bottom: 10%; right: 5%; animation-duration: 6.5s; }
+
+@keyframes floatMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, -40px);
+  }
+}
+h1 {
+  font-family: 'Great Vibes', cursive;
+}
